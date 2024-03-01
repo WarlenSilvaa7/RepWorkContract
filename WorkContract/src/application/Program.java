@@ -21,11 +21,11 @@ public class Program {
 		System.out.print("Enter department's name:");
 		String departmentName = sc.next();
 		System.out.println("Enter worker data:");
-		System.out.println("Name:");
+		System.out.print("Name:");
 		String workerName = sc.next();
-		System.out.println("Level:");
+		System.out.print("Level:");
 		String workerLevel = sc.next();
-		System.out.println("Base Salary:");
+		System.out.print("Base Salary:");
 		Double workerBaseSalary = sc.nextDouble();
 		
 		
@@ -35,7 +35,7 @@ public class Program {
 		int n = sc.nextInt();
 		
 		for (int i=1; i<=n ;i++) {
-			System.out.println("Enter contract #" + i + "data:");
+			System.out.println("Enter contract #" + i + " data:");
 			System.out.println("Date (DD/MM/YYYY):");
 			Date contractDate = new Date(sdf.parse(sc.next()).getTime());
 			System.out.println("Value per hour:");
@@ -48,6 +48,14 @@ public class Program {
 		}
 		
 		System.out.println("Enter month and year to calculate income (MM/YYYY):");
+		String monthAndYear = sc.next();
+		int month = Integer.parseInt(monthAndYear.substring(0, 2));
+		int year = Integer.parseInt(monthAndYear.substring(3));
+		
+		System.out.println("Name:" + x.getName());
+		System.out.println("Departament:" + x.getDepartment().getName());
+		System.out.println("Income for " + monthAndYear + ":");
+		System.out.println(String.format("%.2fx",x.income(year, month)));
 		
 		
 		
